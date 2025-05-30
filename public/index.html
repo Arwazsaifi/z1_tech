@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie Search</h1>
+            <div class="search-container">
+                <!-- Title Search Form -->
+                <form id="searchForm" class="search-form">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search movies by title..."
+                        required
+                        minlength="2"
+                    >
+                    <button type="submit">Search by Title</button>
+                </form>
+
+                <!-- ID Search Form -->
+                <form id="idSearchForm" class="search-form">
+                    <input 
+                        type="text" 
+                        id="idSearchInput" 
+                        placeholder="Enter IMDB ID (e.g., tt0111161)"
+                        pattern="tt\d+"
+                        required
+                    >
+                    <button type="submit">Search by ID</button>
+                </form>
+            </div>
+        </header>
+
+        <main>
+            <div id="results" class="movie-grid"></div>
+            <div id="loading" class="loading" style="display: none;">
+                Searching movies...
+            </div>
+        </main>
+    </div>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="movieDetails"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html> 
